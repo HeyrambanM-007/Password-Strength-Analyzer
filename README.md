@@ -1,71 +1,74 @@
 # 🔐 Password Security Analyzer
 
-A simple C++ cybersecurity tool that analyzes password strength and provides security recommendations.
+A beginner-friendly **C++ cybersecurity project** that analyzes password strength and provides security recommendations.
 
-## 📌 Features
+## 📌 Project Overview
 
-* Checks password length
-* Detects uppercase and lowercase characters
-* Detects numbers and special characters
-* Identifies commonly used passwords
-* Calculates a password security score
-* Estimates password entropy
-* Provides security recommendations
+The Password Security Analyzer evaluates a password based on its length, character complexity, common-password usage, and estimated entropy.
+
+The tool helps users understand why a password may be weak and provides recommendations for creating stronger passwords.
+
+## ✨ Features
+
+* 🔤 Uppercase character detection
+* 🔡 Lowercase character detection
+* 🔢 Number detection
+* 🔣 Special character detection
+* 📏 Password length analysis
+* ⚠️ Common password detection
+* 📊 Password security score
+* 🔐 Password strength classification
+* 🧮 Estimated password entropy
+* 💡 Security recommendations
 
 ## 🛠️ Technologies Used
 
 * **C++**
-* **C++ STL / Standard Library**
+* C++ Standard Library
 * `<cctype>` for character analysis
 * `<cmath>` for entropy calculation
+* `<string>` for password processing
+* `<iostream>` for input/output
 
-## ⚙️ How It Works
+## 🔍 How It Works
 
-The program analyzes the characteristics of a password and assigns a security score based on:
+The program analyzes the password and checks:
 
-* Password length
-* Character diversity
-* Presence of numbers
-* Presence of special characters
-* Whether the password is commonly used
+1. Password length
+2. Uppercase characters
+3. Lowercase characters
+4. Numbers
+5. Special characters
+6. Common-password usage
 
-It also estimates password entropy using:
+A security score is then calculated based on these characteristics.
 
-`Entropy = L × log₂(R)`
+The project also estimates password entropy using:
 
-where `L` is the password length and `R` is the estimated character-set size.
-
-## ▶️ How to Run
-
-### 1. Clone the repository
-
-```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+```text
+Entropy = L × log₂(R)
 ```
 
-### 2. Navigate to the project
+Where:
 
-```bash
-cd PasswordSecurityAnalyzer
-```
+* `L` = password length
+* `R` = estimated character-set size
 
-### 3. Compile
+Higher entropy generally indicates a larger theoretical brute-force search space.
 
-```bash
-g++ main.cpp -o password_analyzer
-```
+> **Note:** Entropy is an estimate and does not guarantee real-world password security because human-generated passwords can contain predictable patterns.
 
-### 4. Run
+## 📊 Password Strength
 
-```bash
-./password_analyzer
-```
+The analyzer classifies passwords into:
 
-On Windows:
-
-```bash
-password_analyzer.exe
-```
+| Score | Strength    |
+| ----: | ----------- |
+|   0–3 | Very Weak   |
+|   4–5 | Weak        |
+|   6–7 | Medium      |
+|   8–9 | Strong      |
+|    10 | Very Strong |
 
 ## 💻 Example
 
@@ -99,23 +102,69 @@ Estimated Entropy    : 47.63 bits
 - Add special characters.
 ```
 
-## 🔒 Cybersecurity Concepts
+## 🚀 How to Run
 
-This project demonstrates basic concepts of:
+### Clone the Repository
+
+```bash
+git clone YOUR_REPOSITORY_URL
+```
+
+### Navigate to the Project
+
+```bash
+cd PasswordSecurityAnalyzer
+```
+
+### Compile
+
+```bash
+g++ main.cpp -o password_analyzer
+```
+
+### Run
+
+Linux/macOS:
+
+```bash
+./password_analyzer
+```
+
+Windows:
+
+```bash
+password_analyzer.exe
+```
+
+## 📁 Repository Structure
+
+```text
+PasswordSecurityAnalyzer/
+│
+├── main.cpp
+├── README.md
+└── .gitignore
+```
+
+## 🔒 Cybersecurity Concepts Demonstrated
+
+This project demonstrates basic concepts related to:
 
 * Password security
+* Authentication security
+* Password complexity
 * Brute-force resistance
 * Password entropy
-* Authentication security
 * Common-password detection
-* Password complexity
+* Secure password practices
 
-## 🚀 Future Improvements
+## 🚧 Future Improvements
 
-* Detect sequential and repeated patterns
-* Add a larger common-password database
-* Add a graphical user interface
+* Detect sequential characters such as `123456` and `abcdef`
+* Detect repeated characters
+* Expand the common-password database
 * Add password generation
+* Add a graphical user interface
 * Add more advanced password-strength analysis
 
 ## 👨‍💻 Author
